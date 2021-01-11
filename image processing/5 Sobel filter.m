@@ -6,7 +6,7 @@
 % clearly presented withyour code.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-imgOrginal = imread('face 03 u6548236.jpg');% Read a face image
+imgOrginal = imread('Lenna.png');% Read a face image
 imgGray = rgb2gray(imgOrginal);
 % The following sobel kernel created REFER to the matlab source code fspecial.m
 % and ENGN6548 Week3_Lec05 p75.
@@ -39,7 +39,7 @@ function output_image = my_Sobel_filter(image, sobel_kernel3)
 % input: image, my 5x5 sobelKernel
 % output: output_image
 
-% Assume border shape = ¡®same¡¯: output size is same as h
+% Assume border shape = Â¡Â®sameÂ¡Â¯: output size is same as h
 border_image = zeros(size(image,1)+2,size(image,2)+2); % Intilize a 0 border image
 output_image = zeros(size(image,1),size(image,2)); % Intilize a new image for receive smoothed image
 for rowH = 1 : (size(image,1))
