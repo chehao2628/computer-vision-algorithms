@@ -6,7 +6,7 @@
 % and save this square region to a new grayscale image. Please display the 
 % two images. Make sure the pixel value range of the grayscale image is within [0, 255].
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-imgOrginal = imread('face 02 u6548236.jpg');% Read a face image
+imgOrginal = imread('Lenna.png');% Read a face image
 img = imgOrginal(105:525, 310:730,:); % Get central facial part of the image
 img = imresize(img, [256,256]); % Resize it to 256x256
 imgGray = rgb2gray(img); % Get grayscale image
@@ -52,7 +52,7 @@ title('3.2 After adding Gaussian Noised');
 % 5a. Apply your Gaussian filter to the above noisy image, and display the 
 % smoothed images and visually check their noise-removal effects
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-gauss_kernel5 = fspecial('gaussian',5,1); % 5x5 kernel, ¦Ò=1
+gauss_kernel5 = fspecial('gaussian',5,1); % 5x5 kernel, Â¦Ã’=1
 %subplot(2,4,6);
 %imshow(gaussianNoised)
 %title('6.1 Before Smoothed Image');
@@ -68,7 +68,7 @@ title('6.1 After Smoothed ImageI(my gauss filter)');
 % and compare different Gaussian kernels with different standard deviations
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% Through compareing different standard deviations, when ¦Ò is xxx, the 
+% Through compareing different standard deviations, when Â¦Ã’ is xxx, the 
 % filter that I built makes the best performance.
 
 % Answer:
@@ -77,11 +77,11 @@ title('6.1 After Smoothed ImageI(my gauss filter)');
 % But if the standard deviation of Gaussian kernel is too large, the
 % handled image will be 'too smooth' and looks a very blur of orginal image.
 % Through tried different standard deviation (from 0.1 to 5) of Gaussian 
-% kernel on filtering the image 'face 02 u6548236.jpg', the best standard 
+% kernel on filtering the image 'Lenna.png', the best standard 
 % deviation for visually should be around 1.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% 6. Compare your result with that by Matlab¡¯s inbuilt 5x5 Gaussian filter 
+% 6. Compare your result with that by MatlabÂ¡Â¯s inbuilt 5x5 Gaussian filter 
 % (e.g. filter2(), imfilter() in Matlab, or conveniently cv2.GaussianBlur() 
 % in Python,). Please show that the two results are nearly identical
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -92,11 +92,11 @@ matlab_outim = filter2(gauss_kernel5, double(gaussianNoised));
 % matlab_outim = imfilter(gaussianNoised, gauss_kernel5);
 imshow(matlab_outim,[]);
 title('6.2 After Smoothed Image(matlab imfilter)');
-%gauss_kernel1 = fspecial('gaussian',5,0.1); % 5x5 kernel, ¦Ò=1
-%gauss_kernel2 = fspecial('gaussian',5,0.3); % 5x5 kernel, ¦Ò=1
-%gauss_kernel3 = fspecial('gaussian',5,0.5); % 5x5 kernel, ¦Ò=1
-%gauss_kernel4 = fspecial('gaussian',5,0.7); % 5x5 kernel, ¦Ò=1
-%gauss_kernel5 = fspecial('gaussian',5,0.9); % 5x5 kernel, ¦Ò=1
+%gauss_kernel1 = fspecial('gaussian',5,0.1); % 5x5 kernel, Â¦Ã’=1
+%gauss_kernel2 = fspecial('gaussian',5,0.3); % 5x5 kernel, Â¦Ã’=1
+%gauss_kernel3 = fspecial('gaussian',5,0.5); % 5x5 kernel, Â¦Ã’=1
+%gauss_kernel4 = fspecial('gaussian',5,0.7); % 5x5 kernel, Â¦Ã’=1
+%gauss_kernel5 = fspecial('gaussian',5,0.9); % 5x5 kernel, Â¦Ã’=1
 
 
 function addRandImg = clip(addRandImg)
@@ -118,7 +118,7 @@ function output_image = my_Gauss_filter(noisy_image, gauss_kernel5)
 % input: noisy_image, my 5x5 gaussKernel
 % output: output_image
 
-% Assume border shape = ¡®same¡¯: output size is same as h
+% Assume border shape = Â¡Â®sameÂ¡Â¯: output size is same as h
 border_noisy_image = zeros(size(noisy_image,1)+4,size(noisy_image,2)+4); % Intilize a 0 border noisy image
 output_image = zeros(size(noisy_image,1),size(noisy_image,2)); % Intilize a new image for receive smoothed image
 for rowH = 1 : (size(noisy_image,1))
