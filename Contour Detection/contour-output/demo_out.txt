@@ -1,0 +1,4 @@
+threshold   0.060000
+overall max F1 score   0.610898
+average max F1 score   0.621614
+area_pr   0.137624
